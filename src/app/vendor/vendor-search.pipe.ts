@@ -21,6 +21,8 @@ export class VendorSearchPipe implements PipeTransform {
         if(
             vendor.code.toLowerCase().includes(searchCriteria)
             || vendor.name.toLowerCase().includes(searchCriteria)
+            || vendor.city.toLowerCase().includes(searchCriteria)
+            || vendor.state.toLowerCase().includes(searchCriteria)
         ) {
             selectedVendors.push(vendor);
         }

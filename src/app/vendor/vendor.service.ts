@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 
 export class VendorService {
     
-    baseurl: string = "http://localhost:4363/api/users";
+    baseurl: string = "http://localhost:4363/api/vendors";
     constructor(
         private http: HttpClient
     ) {}

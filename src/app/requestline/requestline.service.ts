@@ -9,7 +9,7 @@ import { Requestline } from './requestline.class';
 
 export class RequestlineService {
     
-    baseurl: string = "http://localhost:4363/api/users";
+    baseurl: string = "http://localhost:4363/api/requestlines";
     constructor(
         private http: HttpClient
     ) {}

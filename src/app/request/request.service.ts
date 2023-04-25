@@ -7,7 +7,7 @@ import { Request } from './request.class'
     providedIn: 'root'
 })
 export class RequestService {
-    baseurl: string = "http://localhost:4363/api/users";
+    baseurl: string = "http://localhost:4363/api/requests";
     constructor(
         private http: HttpClient
     ) {}
