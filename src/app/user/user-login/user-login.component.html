@@ -1,0 +1,32 @@
+<div id="login">
+    <div>
+        <form>
+            <table class="table table-sm table-borderless">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="fs-2 fw-bold">{{ pageTitle }}</td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td><input [(ngModel)]="username" name="username" type="text"></td>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input [(ngModel)]="password" name="password" type="password"></td>
+                        </tr>
+                        <tr>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <button (click)="login()" class="btn btn-primary">Login</button>
+            </p>
+            <p>
+                <span class="fw-bold text-danger">{{ msg }}&nbsp;</span>
+            </p>
+
+        </form>
+    </div>
+
+</div>

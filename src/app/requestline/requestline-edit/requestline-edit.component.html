@@ -1,0 +1,32 @@
+<header></header>
+<app-menu></app-menu>
+<div id="top">
+    <div id="heading">
+        <span id="pageTitle">Requestline edit</span>
+    </div>
+    <main>
+        <table *ngIf="requestline" class="table table-striped table-sm">
+            <tbody>
+                <tr>
+                    <td>Id:</td>
+                    <td><input [(ngModel)]="requestline.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>Product:</td>
+                    <td>
+                        <select [(ngModel)]="requestline.productId">
+                            <option *ngFor="let p of products" value="{{ p.id }}">{{ p.name }}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td><input [(ngModel)]="requestline.quantity" type="number"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="save()" class="btn btn-primary">Save</button>
+        </div>
+    </main>
+</div>

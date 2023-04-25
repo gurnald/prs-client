@@ -1,0 +1,50 @@
+<header></header>
+<app-menu></app-menu>
+<div id="component">
+    <div id="heading">
+        <span id="pageTitle">User Detail</span>
+    </div>
+    <hr>
+    <main>
+        <table *ngIf="user" class="table table-sm">
+            <tbody>
+                <tr>
+                    <th>Id</th><td><input [(ngModel)]="user.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <th>Username</th><td><input [(ngModel)]="user.username" type="text" disabled></td>
+                </tr>
+                <tr>
+                    <th>Password</th><td><input [(ngModel)]="user.password" type="text" disabled></td>
+                </tr>
+                <tr>
+                    <th>Firstname</th><td><input [(ngModel)]="user.firstname" type="text" disabled></td>
+                </tr>
+                <tr>
+                    <th>Lastname</th><td><input [(ngModel)]="user.lastname" type="text" disabled></td>
+                </tr>
+                <tr>
+                    <th>Phone</th><td><input [(ngModel)]="user.phone" type="text" disabled></td>
+                </tr>
+                <tr>
+                    <th>Email</th><td><input [(ngModel)]="user.email" type="text" disabled></td>
+                </tr>
+                <tr>
+                    <th>Reviewer</th><td><input [(ngModel)]="user.isReviewer" type="checkbox" disabled></td>
+                </tr>
+                <tr>
+                    <th>Admin</th><td><input [(ngModel)]="user.isAdmin" type="checkbox" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <a *ngIf="user" class="btn btn-warning" routerLink="/user/edit/{{user.id}}">Edit</a>
+            | <button (click)="remove()" class="btn btn-danger">Delete</button>
+            <span *ngIf="showVerifyButton">
+                | <button (click)="verifyremove()" class="btn btn-danger" routerLink="/user/list">Verify Delete</button>
+            </span>
+            | <a id="back" class="btn btn-secondary" routerLink="/user/list">Back</a>
+        </div>
+    </main>
+</div>
+<footer></footer>

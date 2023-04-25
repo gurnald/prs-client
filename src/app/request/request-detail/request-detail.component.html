@@ -1,0 +1,51 @@
+<header></header>
+<app-menu></app-menu>
+<div id="component">
+    <div id="heading">
+        <span id="pageTitle">Request Detail</span>
+    </div>
+    <hr>
+    <main>
+        <table class="table table-striped table-sm" *ngIf="request">
+            <tbody>
+                <tr>
+                    <td>Id: </td>
+                    <td><input [(ngModel)]="request.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><input [(ngModel)]="request.description" type="text"disabled></td>
+                </tr>
+                <tr>
+                    <td>Justification: </td>
+                    <td><input [(ngModel)]="request.justification" type="text"disabled></td>
+                </tr>
+                <tr>
+                    <td>Rejection Reason: </td>
+                    <td><input [(ngModel)]="request.rejectionreason" type="text"disabled></td>
+                </tr>
+                <tr>
+                    <td>Delivery mode: </td>
+                    <td><input [(ngModel)]="request.deliverymode" type="text"disabled></td>
+                </tr>
+                <tr>
+                    <td>Status: </td>
+                    <td><input [(ngModel)]="request.status" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><input [(ngModel)]="request.total" type="number" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <a *ngIf="request" class="btn btn-warning" routerLink="/request/edit/{{ request.id }}">Edit</a>
+           | <button (click)="remove()" class="btn btn-danger">Delete</button> |
+           <span *ngIf="showVerifyButton">
+           | <button (click)="verifyRemove()" class="btn btn-danger">Verify Delete</button> |
+           </span>
+            <a id="back"  class="btn btn-secondary" routerLink="/request/list">Back</a>
+        </div>
+    </main>
+</div>
+<footer></footer>

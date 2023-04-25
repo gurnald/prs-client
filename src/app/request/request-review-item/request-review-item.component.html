@@ -1,0 +1,60 @@
+<header></header>
+<app-menu></app-menu>
+<div id="component">
+    <span id="pageTitle">Request Lines</span>
+</div>
+    <hr>
+    <main *ngIf="request">
+        <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Description</td>
+                <td *ngIf="request.rejectionreason" class="fw-bold">Rejection Reason</td>
+                <td>Status</td>
+                <td>Total</td>
+                <td>User</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.description }}</td>
+                <td *ngIf="request.rejectionreason" class="text-danger fw-bold">{{ request.rejectionreason }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total }}</td>
+                <td *ngIf="request.user">{{ request.user.username }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Product</td>
+                <td>Quantity</td>
+                <td>Price</td>
+                <td>Line Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rl of request.requestLines">
+                <td>{{ rl.id }}</td>
+                <td>{{ rl.product.name }}</td>
+                <td>{{ rl.quantity }}</td>
+                <td>{{ rl.product.price | currency }}</td>
+                <td>{{ rl.product.price * rl.quantity | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <button (click)="approve()" class="btn btn-link text-success clickable fw-bold">Approve</button>
+        <button (click)="reject()" class="btn btn-link text-danger clickable fw-bold">Reject</button>
+        <span *ngIf="showVerifyButton">
+            || <input [(ngModel)]="request.rejectionreason" type="text" placeholder="Rejection Reason">
+            || <button (click)="verifyReject()" class="btn btn-link text-danger clickable fw-bold">Verify Reject</button>
+        </span>
+    </p>
+</main>
+<footer></footer>

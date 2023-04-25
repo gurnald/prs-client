@@ -1,0 +1,51 @@
+<header></header>
+<app-menu></app-menu>
+<div id="component">
+    <div id="heading">
+        <span id="pageTitle">Request Edit</span>
+    </div>
+    <hr>
+    <main>
+        <table class="table table-sm" *ngIf="request">
+            <tbody>
+                <tr>
+                    <td>Id: </td>
+                    <td><input [(ngModel)]="request.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><input [(ngModel)]="request.description" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Justification: </td>
+                    <td><input [(ngModel)]="request.justification" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Rejection Reason: </td>
+                    <td><input [(ngModel)]="request.rejectionreason" type="text"disabled></td>
+                </tr>
+                <tr>
+                    <td>Delivery mode: </td>
+                    <td><input [(ngModel)]="request.deliverymode" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Status: </td>
+                    <td><input [(ngModel)]="request.status" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><input [(ngModel)]="request.total" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <td>User: </td>
+                    <td><input [(ngModel)]="request.user.username" type="text"disabled></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button (click)="save()" class="btn btn-primary">Save</button> |
+            <a class="btn btn-secondary" routerLink="/request/list">Back</a>
+        </div>
+    </main>
+</div>
+<footer></footer>

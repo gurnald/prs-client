@@ -1,0 +1,14 @@
+div#login {
+    text-align: center;
+}
+
+div#login div {
+    display: inline-block;
+    width: 50%;
+    margin: 20px auto;
+    border: 2px solid black;
+    background-color: beige;
+}
+div#button {
+    border: 0;
+}
