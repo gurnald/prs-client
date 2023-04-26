@@ -13,25 +13,30 @@
                     <td><input [(ngModel)]="request.id" type="number" disabled></td>
                 </tr>
                 <tr>
-                    <td>Id: </td>
+                    <td>Description: </td>
                     <td><input [(ngModel)]="request.description" type="text"></td>
                 </tr>
                 <tr>
-                    <td>Id: </td>
+                    <td>Justification: </td>
                     <td><input [(ngModel)]="request.justification" type="text"></td>
                 </tr>
                 <tr>
-                    <td>Id: </td>
+                    <td>Delivery Mode: </td>
                     <td><input [(ngModel)]="request.deliverymode" type="text"></td>
                 </tr>
                 <tr>
-                    <td>Id: </td>
+                    <td>Status: </td>
                     <td><input [(ngModel)]="request.status" type="number" disabled></td>
                 </tr>
                 <tr>
-                    <td>Id: </td>
+                    <td>Total: </td>
                     <td><input [ngModel]="request.total | currency" type="number" disabled></td>
                 </tr>
+                <tr>
+                    <td>User: </td>
+                    <td><input [ngModel]="request.userId" type="number" disabled></td>
+                </tr>
+
             </tbody>
         </table>
         <div>

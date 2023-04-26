@@ -11,10 +11,21 @@ export class VendorListComponent {
 
   vendors: Vendor[] = [];
   searchCriteria: string = "";
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
 
   constructor(
     private vndsvc: VendorService
   ) {}
+
+  selectColumn(col: string): void {
+    if(col === this.sortColumn) {
+      this.sortAsc = !this.sortAsc;
+      return
+    }
+    this.sortAsc = true;
+    this.sortColumn = col;
+  }
 
   ngOnInit(): void {
       this.vndsvc.list().subscribe({

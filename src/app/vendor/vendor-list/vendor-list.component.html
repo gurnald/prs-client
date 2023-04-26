@@ -12,19 +12,20 @@
         <table class="table table-striped table table-sm">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                    <th>Phone</th>
-                    <th>Email</th>
+                    <th> <button (click)="selectColumn('id')" class="btn btn-link">Id:</button></th>
+                    <th> <button (click)="selectColumn('code')" class="btn btn-link">Code:</button></th>
+                    <th> <button (click)="selectColumn('name')" class="btn btn-link">Name:</button></th>
+                    <th> <button (click)="selectColumn('address')" class="btn btn-link">Address:</button></th>
+                    <th> <button (click)="selectColumn('city')" class="btn btn-link">City:</button></th>
+                    <th> <button (click)="selectColumn('state')" class="btn btn-link">State:</button></th>
+                    <th> <button (click)="selectColumn('zip')" class="btn btn-link">Zip:</button></th>
+                    <th> <button (click)="selectColumn('phone')" class="btn btn-link">Phone:</button></th>
+                    <th> <button (click)="selectColumn('email')" class="btn btn-link">Email:</button></th>
+                    <th>Actions:</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let v of vendors | vendorSearch: searchCriteria">
+                <tr *ngFor="let v of vendors | vendorSearch: searchCriteria | sort: sortColumn: sortAsc">
                     <td>{{ v.id }}</td>
                     <td>{{ v.code }}</td>
                     <td>{{ v.name }}</td>

@@ -38,7 +38,7 @@ import { RequestReviewItemComponent } from "./request/request-review-item/reques
 
 
 const routes: Routes = [
-    {path: "", redirectTo:"/home", pathMatch: "full"},
+    {path: "", redirectTo:"/user/login", pathMatch: "full"},
     {path: "home", component: HomeComponent},
     {path: "about", component: AboutComponent},
 
@@ -46,7 +46,7 @@ const routes: Routes = [
     {path: "user/detail/:id", component:UserDetailComponent},
     {path: "user/edit/:id", component:UserEditComponent},
     {path: "user/create", component:UserCreateComponent},
-    {path: "login", component:UserLoginComponent},
+    //{path: "login", component:UserLoginComponent},
     
     {path: "product/list", component:ProductListComponent},
     {path: "product/detail/:id", component:ProductDetailComponent},

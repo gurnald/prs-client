@@ -11,10 +11,22 @@ export class UserListComponent implements OnInit {
 
   users: User[] = [];
   searchCriteria: string = "";
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
 
   constructor(
     private usrsvc: UserService
   ) {}
+
+
+  selectColumn(col: string): void {
+    if(col === this.sortColumn) {
+      this.sortAsc = !this.sortAsc;
+      return
+    }
+    this.sortAsc = true;
+    this.sortColumn = col;
+  }
 
   ngOnInit(): void {
       this.usrsvc.list().subscribe({

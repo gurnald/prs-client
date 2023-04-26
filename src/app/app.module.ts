@@ -36,6 +36,7 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe';
 import { BoolDisplayPipe } from './bool-display.pipe';
+import { sortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { BoolDisplayPipe } from './bool-display.pipe';
     UserDetailComponent,
     UserEditComponent,
     UserSearchPipe,
+    sortPipe,
     UserListComponent,
     UserLoginComponent,
     VendorCreateComponent,

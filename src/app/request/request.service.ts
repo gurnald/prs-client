@@ -13,7 +13,7 @@ export class RequestService {
     ) {}
 
     reviews(userId: number): Observable<Request[]> {
-        return this.http.get(`${this.baseurl}/${userId}`) as Observable<Request[]>;
+        return this.http.get(`${this.baseurl}/review/${userId}`) as Observable<Request[]>;
     }
 
     list(): Observable<Request[]> {

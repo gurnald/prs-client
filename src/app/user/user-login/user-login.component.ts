@@ -19,8 +19,8 @@ export class UserLoginComponent {
     return this.sys.getLoggedInUser()?.isAdmin;
   }
 
-  username: string = "sa";
-  password: string = "sa";
+  username: string = "";
+  password: string = "";
   msg: string = "";
 
   constructor(
@@ -38,7 +38,7 @@ export class UserLoginComponent {
         this.router.navigateByUrl("/request/list");
       },
       error: (err) => {
-        if(err.status == 404) {
+        if(err.status === 404) {
           this.msg = "Username/Password is not found";
         } else {
             console.error(err);

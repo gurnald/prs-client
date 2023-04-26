@@ -79,7 +79,7 @@ export class RequestReviewItemComponent implements OnInit {
       let id = this.route.snapshot.params["id"];
       this.reqsvc.get(id).subscribe({
         next: (res) => {
-          console.debug("request:", res);
+          console.debug("Request:", res);
           this.request = res;
         },
         error: (err) => console.error(err)
