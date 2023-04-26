@@ -19,8 +19,8 @@ export class UserLoginComponent {
     return this.sys.getLoggedInUser()?.isAdmin;
   }
 
-  username: string = "";
-  password: string = "";
+  username: string = "sa";
+  password: string = "sa";
   msg: string = "";
 
   constructor(

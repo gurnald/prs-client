@@ -5,7 +5,7 @@ import { Vendor } from "./vendor.class";
 
 
 @Pipe({
-    name: 'VendorSearch'
+    name: 'vendorSearch'
 })
 export class VendorSearchPipe implements PipeTransform {
 
