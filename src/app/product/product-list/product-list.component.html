@@ -12,25 +12,25 @@
         <table class="table table-striped table table-s">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Vendor</th>
-                    <th>PartNbr</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Unit</th>
-                    <th>Photo Path</th>
-                    <th>Actions</th>
+                    <th> <button (click)="selectColumn('id')" class="btn btn-link">Id:</button></th>
+                    <th> <button (click)="selectColumn('vendor')" class="btn btn-link">Vendor:</button></th>
+                    <th> <button (click)="selectColumn('prtNbr')" class="btn btn-link">PartNbr:</button></th>
+                    <th> <button (click)="selectColumn('name')" class="btn btn-link">Name:</button></th>
+                    <th> <button (click)="selectColumn('unit')" class="btn btn-link">Unit:</button></th>
+                    <th> <button (click)="selectColumn('price')" class="btn btn-link">Price:</button></th>
+                    <th> <button (click)="selectColumn('photoPath')" class="btn btn-link">Photopath:</button></th>
+                    <th>Actions:</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of products | productSearch: searchCriteria">
+                <tr *ngFor="let p of products | productSearch: searchCriteria | sort: sortColumn: sortAsc">
                     <td>{{ p.id }}</td>
                     <td>{{ p.vendor.name }}</td>
-                    <td>{{ p.partNbr }}</td>
-                    <td>{{ p.name }}</td>
+                    <td>{{ p.prtNbr }}</td>
+                     <td>{{ p.name }}</td>
+                     <td>{{ p.unit }}</td>
                     <td>{{ p.price  | currency }}</td>
-                    <td>{{ p.unit }}</td>
-                    <td>{{ p.photopath }}</td>
+                   <td>{{ p.photoPath }}</td>
                     <td>
                         <a routerLink="/product/detail/{{ p.id }}">Detail</a> |
                         <a routerLink="/product/edit/{{ p.id }}">Edit</a>     |

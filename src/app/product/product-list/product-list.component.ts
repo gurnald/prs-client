@@ -11,10 +11,21 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
   searchCriteria: string = "";
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
 
   constructor(
     private prdsvc: ProductService
   ) {}
+
+  selectColumn(col: string): void {
+    if(col === this.sortColumn) {
+      this.sortAsc = !this.sortAsc;
+      return
+    }
+    this.sortAsc = true;
+    this.sortColumn = col;
+  }
 
   ngOnInit(): void {
       this.prdsvc.list().subscribe({

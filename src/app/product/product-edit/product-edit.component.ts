@@ -23,10 +23,11 @@ export class ProductEditComponent implements OnInit {
   ) {}
 
   save(): void {
+    this.product.vendorId = +this.product.vendorId
     this.prdsvc.change(this.product).subscribe({
       next: (res) => {
         console.debug("Product Updated");
-        this.router.navigateByUrl("/Product/list");
+        this.router.navigateByUrl("/product/list");
       },
       error: (err) => {
         console.error(err);

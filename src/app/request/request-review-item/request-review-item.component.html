@@ -10,7 +10,7 @@
             <tr>
                 <td>Id</td>
                 <td>Description</td>
-                <td *ngIf="request.rejectionreason" class="fw-bold">Rejection Reason</td>
+                <td *ngIf="request.rejectionReason" class="fw-bold">Rejection Reason</td>
                 <td>Status</td>
                 <td>Total</td>
                 <td>User</td>
@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ request.id }}</td>
                 <td>{{ request.description }}</td>
-                <td *ngIf="request.rejectionreason" class="text-danger fw-bold">{{ request.rejectionreason }}</td>
+                <td *ngIf="request.rejectionReason" class="text-danger fw-bold">{{ request.rejectionReason }}</td>
                 <td>{{ request.status }}</td>
                 <td>{{ request.total }}</td>
                 <td *ngIf="request.user">{{ request.user.username }}</td>
@@ -52,7 +52,7 @@
         <button (click)="approve()" class="btn btn-link text-success clickable fw-bold">Approve</button>
         <button (click)="reject()" class="btn btn-link text-danger clickable fw-bold">Reject</button>
         <span *ngIf="showVerifyButton">
-            || <input [(ngModel)]="request.rejectionreason" type="text" placeholder="Rejection Reason">
+            || <input [(ngModel)]="request.rejectionReason" type="text" placeholder="Rejection Reason">
             || <button (click)="verifyReject()" class="btn btn-link text-danger clickable fw-bold">Verify Reject</button>
         </span>
     </p>
