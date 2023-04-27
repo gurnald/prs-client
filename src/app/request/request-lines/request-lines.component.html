@@ -2,7 +2,7 @@
 <app-menu></app-menu>
 <div id="component">
     <div id="heading">
-        <span id="pageTitel">Request Lines</span>
+        <span id="pageTitle">Request Lines</span>
     </div>
     <hr>
     <main *ngIf="request">
@@ -11,6 +11,9 @@
                 <tr>
                     <td>Id</td>
                     <td>Description</td>
+                    <td>Justification</td>
+                    <td>Rejection Reason</td>
+                    <td>Delivery Mode</td>
                     <td>Status</td>
                     <td>Total</td>
                     <td>User</td>
@@ -21,20 +24,24 @@
                 <tr>
                     <td>{{ request.id }}</td>
                     <td>{{ request.description }}</td>
+                    <td>{{ request.justification }}</td>
+                    <td id="reject">{{ request.rejectionReason }}</td>
+                    <td>{{ request.deliveryMode }}</td>
                     <td>{{ request.status }}</td>
                     <td>{{ request.total | currency }}</td>
-                    <td *ngIf="request.user"> {{ request.user.username }}</td>
+                    <td>{{request.user.username }}</td>
                     <td>
-                        <button (click)="review()" class="btn btn-link clickable">Submit For Review</button>
+                        <button (click)="review(request.id)" class="btn btn-link clickable">Submit For Review</button>
                     </td>
                 </tr>
             </tbody>
         </table>
         <hr>
         <div>
-            <a routerLink="/requestlines/create/{{ request.id }}">New</a>
-        </div>
-        <table class="table table-striped table-sm">
+            <span>RequestLines</span> |
+        <a routerLink="/requestlines/create/{{ request.id }}" *ngIf="request">New</a>
+        </div>        
+        <table class="table table-striped table-sm" *ngIf="request">
             <thead>
                 <tr>
                     <td>Id</td>
@@ -53,8 +60,8 @@
                     <td>{{ rline.product.price | currency }}</td>
                     <td>{{ rline.product.price * rline.quantity | currency }}</td>
                     <td>
-                        <button (click)="edit(rline)" class="btn btn-link clickable">Edit</button> |
-                        <button (click)="remove(rline)" class="btn btn-link clickable">Delete</button> 
+                        <a routerLink="/requestlines/edit/{{rline.id}}" class="btn btn-warning btn-sm">Edit</a> |
+                        <a (click)="remove(rline.id)" class="btn btn-danger btn-sm">Delete</a>
                     </td>
                 </tr>
             </tbody>

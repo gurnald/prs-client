@@ -26,7 +26,8 @@
             </tbody>
         </table>
         <div>
-            <button (click)="save()" class="btn btn-primary">Save</button>
+            <a routerLink="/request/lines/{{requestline.id}}" class="btn btn-warning btn-sm">Back</a> |
+            <button (click)="save()" class="btn btn-primary btn-sm">Save</button>
         </div>
     </main>
 </div>

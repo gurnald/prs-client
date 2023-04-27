@@ -1,81 +1,85 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './core/home/home.component';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
-import { HomeComponent } from './core/home/home.component';
-import { ProductCreateComponent } from './product/product-create/product-create.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { ProductSearchPipe } from './product/product-search.pipe';
-import { RequestCreateComponent } from './request/request-create/request-create.component';
-import { RequestDetailComponent } from './request/request-detail/request-detail.component';
-import { RequestEditComponent } from './request/request-edit/request-edit.component';
-import { RequestLinesComponent } from './request/request-lines/request-lines.component';
-import { RequestListComponent } from './request/request-list/request-list.component';
-import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
-import { RequestReviewsComponent } from './request/request-reviews/request-reviews.component';
-import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
-import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
-import { RequestSearchPipe } from './request/request-search.pipe';
-import { UserCreateComponent } from './user/user-create/user-create.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { MenuComponent } from './menu/menu.component';
 import { UserListComponent } from './user/user-list/user-list.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserSearchPipe } from './user/user-search.pipe';
 import { UserLoginComponent } from './user/user-login/user-login.component';
-import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
-import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
-import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductSearchPipe } from './product/product-search.pipe';
 import { BoolDisplayPipe } from './bool-display.pipe';
 import { sortPipe } from './sort.pipe';
+
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestSearchPipe } from './request/request-search.pipe';
+import { RequestReviewsComponent } from './request/request-reviews/request-reviews.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestApproveRejectComponent } from './request/request-approve-reject/request-approve-reject.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    HomeComponent,
     AboutComponent,
     E404Component,
-    HomeComponent,
-    BoolDisplayPipe,
-    ProductCreateComponent,
-    ProductDetailComponent,
-    ProductEditComponent,
-    ProductListComponent,
-    ProductSearchPipe,
-    RequestCreateComponent,
-    RequestDetailComponent,
-    RequestEditComponent,
-    RequestLinesComponent,
-    RequestListComponent,
-    RequestReviewItemComponent,
-    RequestReviewsComponent,
-    RequestlineCreateComponent,
-    RequestlineEditComponent,
-    RequestSearchPipe,
-    UserCreateComponent,
+    MenuComponent,
+    UserListComponent,
     UserDetailComponent,
+    UserCreateComponent,
     UserEditComponent,
     UserSearchPipe,
-    sortPipe,
-    UserListComponent,
     UserLoginComponent,
-    VendorCreateComponent,
-    VendorDetailComponent,
-    VendorEditComponent,
     VendorListComponent,
-    VendorSearchPipe
+    VendorEditComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorSearchPipe,
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductCreateComponent,
+    ProductSearchPipe,
+    BoolDisplayPipe,
+    sortPipe,
+    RequestListComponent,
+    RequestEditComponent,
+    RequestDetailComponent,
+    RequestCreateComponent,
+    RequestSearchPipe,
+    RequestReviewsComponent,
+    RequestReviewItemComponent,
+    RequestlineEditComponent,
+    RequestlineCreateComponent,
+    RequestLinesComponent,
+    RequestApproveRejectComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule
+    BrowserModule,FormsModule, HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

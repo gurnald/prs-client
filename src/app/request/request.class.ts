@@ -2,7 +2,7 @@ import { Requestline } from "../requestline/requestline.class";
 import { User } from "../user/user.class";
 
 export class Request {
-    id: number = 0;
+    id: number = 0; 
     description: string = "";
     justification: string = "";
     rejectionReason: string = "";
@@ -16,5 +16,4 @@ export class Request {
 
     requestLines!: Requestline[]
 
-    
 }
