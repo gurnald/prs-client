@@ -14,11 +14,22 @@ export class RequestReviewsComponent implements OnInit {
   get isAdmin() {return this.sys.isAdmin; }
   
   searchCriteria: string = "";
-
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
+  
   constructor(
     private sys: SystemService,
     private reqsvc: RequestService
   ) {}
+
+  selectColumn(col: string): void {
+    if(col === this.sortColumn) {
+      this.sortAsc = !this.sortAsc;
+      return
+    }
+    this.sortAsc = true;
+    this.sortColumn = col;
+  }
 
   addUserUsername(requests: Request[]) {
     for(let r of requests) {

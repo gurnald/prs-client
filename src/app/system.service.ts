@@ -36,8 +36,8 @@ export class SystemService {
     }
 
     chkLogin(): void {
-        if(!this.isLoggedIn) {
-            this.router.navigateByUrl("/login");
+        if(!this.isLoggedIn === null) {
+            this.router.navigateByUrl("user/login");
         }
     }
 }

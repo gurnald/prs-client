@@ -12,19 +12,19 @@
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
-                    <th>Id</th> 
-                    <th>Description</th> 
-                    <th>Justification</th> 
-                    <th>RejectionReason</th> 
-                    <th>DeliveryMode</th> 
-                    <th>Status</th> 
-                    <th>Total</th> 
-                    <th>User</th> 
+                    <th> <button (click)="selectColumn('id')" class="btn btn-link">Id:</button></th>
+                    <th> <button (click)="selectColumn('description')" class="btn btn-link">Description:</button></th>
+                    <th> <button (click)="selectColumn('justification')" class="btn btn-link">Justification:</button></th>
+                    <th> <button (click)="selectColumn('rejectionReason')" class="btn btn-link">RejectionReason:</button></th>
+                    <th> <button (click)="selectColumn('deliveryMode')" class="btn btn-link">DeliveryMode:</button></th>
+                    <th> <button (click)="selectColumn('status')" class="btn btn-link">Status:</button></th>
+                    <th> <button (click)="selectColumn('total')" class="btn btn-link">Total:</button></th>
+                    <th> <button (click)="selectColumn('user')" class="btn btn-link">User:</button></th>
                     <th>Actions</th> 
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let r of requests | requestSearch: searchCriteria">
+                <tr *ngFor="let r of requests | requestSearch: searchCriteria | sort: sortColumn: sortAsc">
                     <td>{{ r.id }} | </td>
                     <td>{{ r.description }}</td>
                     <td>{{ r.justification }}</td>

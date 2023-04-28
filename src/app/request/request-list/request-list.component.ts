@@ -12,12 +12,23 @@ export class RequestListComponent implements OnInit {
 
   requests!: Request[];
   searchCriteria: string = "";
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
   get isAdmin() { return this.sys.isAdmin };
 
   constructor(
     private sys: SystemService,
     private reqsvc: RequestService
   ) {}
+
+  selectColumn(col: string): void {
+    if(col === this.sortColumn) {
+      this.sortAsc = !this.sortAsc;
+      return
+    }
+    this.sortAsc = true;
+    this.sortColumn = col;
+  }
 
   addUsersUsername(requests: Request[]) {
     for(let r of requests) {
