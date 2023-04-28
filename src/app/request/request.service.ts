@@ -28,15 +28,15 @@ export class RequestService {
     }
 
     review(request: Request): Observable<any> {
-        return this.http.put(`${this.baseurl}/reviews/${request.id}`, request) as Observable<any>;
+        return this.http.put(`${this.baseurl}/review/${request.id}`, request) as Observable<any>;
     }
 
     approve(request: Request): Observable<any> {
-        return this.http.put(`${this.baseurl}/approved/${request.id}`, request) as Observable<any>;
+        return this.http.put(`${this.baseurl}/approve/${request.id}`, request) as Observable<any>;
     }
 
     reject(request: Request): Observable<any> {
-        return this.http.put(`${this.baseurl}/rejected/${request.id}`, request) as Observable<any>;
+        return this.http.put(`${this.baseurl}/reject/${request.id}`, request) as Observable<any>;
     }
 
     change(request: Request): Observable<any> {

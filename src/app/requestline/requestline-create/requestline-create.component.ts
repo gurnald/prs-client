@@ -15,7 +15,6 @@ export class RequestlineCreateComponent implements OnInit {
   
   requestline: Requestline = new Requestline();
   products!: Product[];
-  reqlId: number = 0;
 
   constructor(
     private reqlsvc: RequestlineService,
@@ -26,13 +25,13 @@ export class RequestlineCreateComponent implements OnInit {
 
 
   save(): void {
-    this.requestline.requestId = +this.reqlId;
+    this.requestline.requestId = +this.requestline.requestId
     this.requestline.productId = +this.requestline.productId;
-    console.log(this.requestline)
+    console.log(this.requestline);
     this.reqlsvc.create(this.requestline).subscribe({
       next: (res) => {
         console.debug("Requestline Added");
-        this.router.navigateByUrl(`/request/lines/${this.reqlId}`);
+        this.router.navigateByUrl(`/request/lines/${this.requestline.requestId}`);
       },
       error: (err) => {
         console.error(err);
@@ -40,18 +39,15 @@ export class RequestlineCreateComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.reqlId = this.route.snapshot.params["id"];
+    this.requestline.requestId = this.route.snapshot.params["rid"];
     this.prdsvc.list().subscribe({
       next: (res) => {
-        console.debug("Products:", res);
+        console.debug("Requestline:", res);
         this.products = res;
       },
-      error: (err) => {
-        console.error(err);
-      }
-
+      error: (err) => console.error(err)
     });
-      
-  }
+
+}
 
 }

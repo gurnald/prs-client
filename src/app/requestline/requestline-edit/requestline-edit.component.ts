@@ -25,10 +25,11 @@ export class RequestlineEditComponent {
   ) {}
 
   save(): void {
+    this.requestline.requestId = +this.requestline.requestId;
     this.requestline.productId = +this.requestline.productId;
     this.reqlsvc.change(this.requestline).subscribe({
       next: (res) => {
-        console.debug("Requestline added");
+        console.debug("Requestline Updated");
         this.router.navigateByUrl(`/request/lines/${this.requestline.requestId}`);
       },
       error: (err) => console.error(err)

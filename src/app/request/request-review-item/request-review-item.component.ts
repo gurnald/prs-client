@@ -12,7 +12,7 @@ import { Requestline } from 'src/app/requestline/requestline.class';
 })
 export class RequestReviewItemComponent implements OnInit {
 
-  pageTitle: string ="Request Lines";
+  id: number = 0;
   request!: Request;
   showVerifyButton: boolean = false;
   get isAdmin() {
@@ -55,6 +55,7 @@ export class RequestReviewItemComponent implements OnInit {
       this.reqsvc.approve(this.request).subscribe({
         next: (res) => {
           console.debug("Request approved.");
+          this.router.navigateByUrl("/request/list")
           this.refresh();
         },
         error: (err) => console.error(err)

@@ -1,7 +1,7 @@
 <header></header>
 <app-menu></app-menu>
 <div id="component">
-    <span id="pageTitle">Request Lines</span>
+    <span id="pageTitle">Reviews</span>
 </div>
     <hr>
     <main *ngIf="request">
@@ -10,7 +10,9 @@
             <tr>
                 <td>Id</td>
                 <td>Description</td>
+                <td>Justification</td>
                 <td *ngIf="request.rejectionReason" class="fw-bold">Rejection Reason</td>
+                <td>Delivery Mode</td>
                 <td>Status</td>
                 <td>Total</td>
                 <td>User</td>
@@ -20,9 +22,11 @@
             <tr>
                 <td>{{ request.id }}</td>
                 <td>{{ request.description }}</td>
+                <td>{{ request.justification }}</td>
                 <td *ngIf="request.rejectionReason" class="text-danger fw-bold">{{ request.rejectionReason }}</td>
+                <td>{{ request.deliveryMode }}</td>
                 <td>{{ request.status }}</td>
-                <td>{{ request.total }}</td>
+                <td>{{ request.total | currency }}</td>
                 <td *ngIf="request.user">{{ request.user.username }}</td>
             </tr>
         </tbody>

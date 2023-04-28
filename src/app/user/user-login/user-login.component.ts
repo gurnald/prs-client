@@ -30,7 +30,7 @@ export class UserLoginComponent {
   ) { }
 
   login(): void {
-    this.msg = "";
+    this.msg = "user logged in";
     this.usrsvc.login(this.username, this.password).subscribe({
       next: (res) => {
         console.debug("login is successful");
